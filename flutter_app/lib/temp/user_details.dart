@@ -1,8 +1,10 @@
 import "package:flutter/material.dart";
 import "user_model.dart";
+import 'package:flutter_app/temp/base.dart';
 
 class UserDetail extends StatelessWidget {
   final UserModel _user;
+
 
   UserDetail(this._user);
 
@@ -113,9 +115,13 @@ class UserDetail extends StatelessWidget {
               children: <Widget>[
                 Text("Please Contact over"+_user.phone),
                 new FlatButton(
-                  child: new Text("Close"),
+                  child: new Text("Done"),
                   onPressed: () {
-                    Navigator.of(context).pop();
+                    Base.history.add(Base.userlist[_user.id]);
+                    Base.userlist.removeAt(_user.id);
+
+                   // Navigator.of(context).pop();
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Base()));
                   },
                 ),
               ],
