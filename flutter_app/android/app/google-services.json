@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "316549091310",
+    "firebase_url": "https://hackit-buf.firebaseio.com",
+    "project_id": "hackit-buf",
+    "storage_bucket": "hackit-buf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316549091310:android:477ed2c45f4d4068",
+        "android_client_info": {
+          "package_name": "com.hackit.flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316549091310-rlvmbm59d3s79ghv0ft5rf2145684m06.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdfPh2TS2IasBcv2jfr3SdYVGDVV29UVI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316549091310-rlvmbm59d3s79ghv0ft5rf2145684m06.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
