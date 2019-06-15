@@ -41,22 +41,44 @@ class User extends StatelessWidget {
                       child: Text("Distance: "+_user.address, style: TextStyle(fontSize: 14 , fontFamily: "VT323"),),
                     ),
                     Row(children: <Widget>[
+                      SizedBox(width:60),
                       Padding(
-                        padding: const EdgeInsets.only(left:80.0),
-                        child: Container(height: 30, width: 100,color: Color.fromARGB(255, 211, 211, 211),child: Text(_user.category),),
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: <Widget>[
+                            Container(height: 20,width: 100,color: Colors.amber,child: Padding(
+                              padding: const EdgeInsets.all(2.0),
+                              child: Text("Category ", style: TextStyle(fontSize: 14),textAlign: TextAlign.center,),
+                            )),
+                            Container(height: 20,width: 100,color: Colors.grey,child: Padding(
+                              padding: const EdgeInsets.all(2.0),
+                              child: Text(_user.category, style: TextStyle(fontSize: 14),textAlign: TextAlign.center,),
+                            )),
+                          ],
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Container(height: 30, width: 100,color: Color.fromARGB(255, 211, 211, 211),child: Text(_user.payRange.toString()),),
-                      )
+                        child: Column(
+                          children: <Widget>[
+                            Container(height: 20,width: 100,color: Colors.amber,child: Padding(
+                              padding: const EdgeInsets.all(2.0),
+                              child: Text("Payment ", style: TextStyle(fontSize: 14),textAlign: TextAlign.center,),
+                            )),
+                            Container(height: 20,width: 100,color: Colors.grey,child: Padding(
+                              padding: const EdgeInsets.all(2.0),
+                              child: Text(_user.payRange.toString()+" \$", style: TextStyle(fontSize: 14),textAlign: TextAlign.center,),
+                            )),
+                          ],
+                        ),
+                      ),],),
                     ],)
                   ],
                 )
-              ],
             ),
           ),
         ),
-      ),
+
     );
   }
 }
