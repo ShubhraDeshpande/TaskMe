@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './user_model.dart';
 import './user.dart';
+import 'package:flutter_app/temp/create_post.dart';
 
 class Base extends StatelessWidget {
   final List<UserModel> _userlist = [
@@ -36,11 +37,24 @@ class Base extends StatelessWidget {
       home: Scaffold(
 
         body: Material( type: MaterialType.transparency,
-          child: Container( color: Color.fromARGB(255, 211, 211, 211),
-            child: ListView(
-              children: _userlist.map((user) => User(user)).toList(),
+          child: Stack(
+            children:[ Container( color: Color.fromARGB(255, 211, 211, 211),
+              child: ListView(
+                children: _userlist.map((user) => User(user)).toList(),
+              ),
             ),
-          ),
+
+            Padding(
+              padding: const EdgeInsets.only(top:600.0, left: 200),
+              child: FloatingActionButton(
+                backgroundColor: Colors.amber,
+                child: Icon(Icons.add),
+                onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => CreatePost()));},
+              ),
+            )
+
+
+            ] ),
         ),
       ),
     );
