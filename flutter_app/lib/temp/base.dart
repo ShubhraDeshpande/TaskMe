@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './user_model.dart';
 import './user.dart';
 import 'package:flutter_app/temp/create_post.dart';
+import 'package:flutter_app/temp/history_list.dart';
 
 class Base extends StatelessWidget {
 static List<UserModel> history =[];
@@ -36,20 +37,55 @@ static List<UserModel> history =[];
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        appBar: AppBar(title: Text("blah")),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              DrawerHeader(
+                child: Row(
+                  children: <Widget>[
+                    Text('Your History', style: TextStyle(fontSize: 20),),
+                  ],
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.amber,
+                ),
+              ),
+              ListTile(
+                title: Text('History'),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Base() ));
+
+                 // Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                title: Text(' Settings'),
+                onTap: () {
+
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                title: Text(' Logout'),
+                onTap: () {
+
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
+        ),
 
         body: Material( type: MaterialType.transparency,
           child: Stack(
             children:[
-
-
-              Padding(
-                padding: const EdgeInsets.only(top:100.0),
-                child: Container( color: Color.fromARGB(255, 211, 211, 211),
-                child: ListView(
-                  children: Base.userlist.map((user) => User(user)).toList(),
-                ),
-            ),
+              Container( color: Color.fromARGB(255, 211, 211, 211),
+              child: ListView(
+                children: Base.userlist.map((user) => User(user)).toList(),
               ),
+            ),
 
             Padding(
               padding: const EdgeInsets.only(top:600.0, left: 300, bottom: 10),
@@ -62,45 +98,7 @@ static List<UserModel> history =[];
                 ),
               ),
 
-              Scaffold(
-                appBar: AppBar(title: Text("blah")),
-                body: Center(child: Text('My Page!')),
-                drawer: Drawer(
-                  // Add a ListView to the drawer. This ensures the user can scroll
-                  // through the options in the drawer if there isn't enough vertical
-                  // space to fit everything.
-                  child: ListView(
-                    // Important: Remove any padding from the ListView.
-                    padding: EdgeInsets.zero,
-                    children: <Widget>[
-                      DrawerHeader(
-                        child: Text('Drawer Header'),
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                        ),
-                      ),
-                      ListTile(
-                        title: Text('Item 1'),
-                        onTap: () {
-                          // Update the state of the app
-                          // ...
-                          // Then close the drawer
-                          Navigator.pop(context);
-                        },
-                      ),
-                      ListTile(
-                        title: Text('Item 2'),
-                        onTap: () {
-                          // Update the state of the app
-                          // ...
-                          // Then close the drawer
-                          Navigator.pop(context);
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+
 
 
             ] ),
