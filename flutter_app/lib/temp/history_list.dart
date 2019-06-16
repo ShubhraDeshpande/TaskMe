@@ -5,6 +5,7 @@ import 'base.dart';
 
 class History extends StatelessWidget {
   /// Main Widget Build
+  static bool base;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,10 +27,12 @@ class History extends StatelessWidget {
 
 
                 Container(color: Color.fromARGB(255, 211, 211, 211),
-                  child: ListView(
-                    children: Base.history.map((user) => User(user)).toList(),
-                  ),
-                ),
+                  child: Base.history.length >0 ?
+                     ListView(
+                      children: Base.history.map((user) => User(user, base)).toList(),
+                    ):
+                   Padding(padding: const EdgeInsets.all(100),child: Container(color: Colors.white70,child:  Text("You don't seem to have any jobs. Let's get some money")),
+                )),
 
                 Padding(
                   padding: const EdgeInsets.only(
