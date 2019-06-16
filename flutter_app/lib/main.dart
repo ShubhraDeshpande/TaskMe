@@ -61,12 +61,17 @@ class TempState extends State<Temp>{
         VoidCallback refetch,
       }){
         if(result.data==null){return Text("no data fpund");}
-        return Column(
-          children: <Widget>[
-            Text(result.data['course']['title']),
-            Text(result.data['course']['author'])
-          ],
-        );
+        return ListView.builder(itemBuilder: (BuildContext context, int Index){
+          return Text(result.data['course']['title']);
+        },itemCount: result.data.length,);
+
+
+//        return Column(
+//          children: <Widget>[
+//            Text(result.data['course']['title']),
+//            Text(result.data['course']['author'])
+//          ],
+//        );
 
       }),
     );
