@@ -24,6 +24,8 @@ class CreatePostState extends State<CreatePost>{
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('Post a Job'),
+        centerTitle: true,
+        backgroundColor: Color.fromRGBO(220, 220, 220, 1),
       ),
       body: new Container(
           padding: new EdgeInsets.all(10.0),
