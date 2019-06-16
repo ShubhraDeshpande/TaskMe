@@ -37,7 +37,10 @@ static List<UserModel> history =[];
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text("blah")),
+        appBar: AppBar(
+            title: Text("blah"),
+            centerTitle: true,
+            backgroundColor: Color.fromRGBO(64, 64, 122, 0.8)),
         drawer: Drawer(
           child: ListView(
             padding: EdgeInsets.zero,
@@ -55,7 +58,7 @@ static List<UserModel> history =[];
               ListTile(
                 title: Text('History'),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Base() ));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => History() ));
 
                  // Navigator.pop(context);
                 },
@@ -91,8 +94,11 @@ static List<UserModel> history =[];
               padding: const EdgeInsets.only(top:600.0, left: 300, bottom: 10),
               child: SizedBox( height: 100,width: 100,
                 child: FloatingActionButton(
-                    backgroundColor: Colors.amber,
-                    child: Icon(Icons.add),
+                    backgroundColor: Colors.white,
+                    child: Icon(
+                      Icons.add,
+                      size: 60,
+                      color: Color.fromRGBO(44, 44, 84, 0.9),),
                     onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => CreatePost()));},
                   ),
                 ),

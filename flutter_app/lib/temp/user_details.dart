@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "user_model.dart";
 import 'package:flutter_app/temp/base.dart';
+import 'history_list.dart';
 
 class UserDetail extends StatelessWidget {
   final UserModel _user;

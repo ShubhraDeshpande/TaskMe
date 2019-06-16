@@ -12,7 +12,7 @@ class User extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(25),
-        color: Colors.white,),
+        color: Color.fromRGBO(247, 241, 227, 0.9),),
         child: InkWell(
           onTap: () =>  Navigator.push(context, MaterialPageRoute(builder: (context) => UserDetail(_user))),
           child: Container(
@@ -46,11 +46,11 @@ class User extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
                           children: <Widget>[
-                            Container(height: 20,width: 100,color: Colors.amber,child: Padding(
+                            Container(height: 20,width: 100,color: Color.fromRGBO(64, 64, 122, 0.3), child: Padding(
                               padding: const EdgeInsets.all(2.0),
                               child: Text("Category ", style: TextStyle(fontSize: 14),textAlign: TextAlign.center,),
                             )),
-                            Container(height: 20,width: 100,color: Colors.grey,child: Padding(
+                            Container(height: 20,width: 100,color: Colors.white70,child: Padding(
                               padding: const EdgeInsets.all(2.0),
                               child: Text(_user.category, style: TextStyle(fontSize: 14),textAlign: TextAlign.center,),
                             )),
@@ -61,11 +61,11 @@ class User extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
                           children: <Widget>[
-                            Container(height: 20,width: 100,color: Colors.amber,child: Padding(
+                            Container(height: 20,width: 100,color: Color.fromRGBO(64, 64, 122, 0.3),child: Padding(
                               padding: const EdgeInsets.all(2.0),
                               child: Text("Payment ", style: TextStyle(fontSize: 14),textAlign: TextAlign.center,),
                             )),
-                            Container(height: 20,width: 100,color: Colors.grey,child: Padding(
+                            Container(height: 20,width: 100,color: Colors.white70,child: Padding(
                               padding: const EdgeInsets.all(2.0),
                               child: Text(_user.payRange.toString()+" \$", style: TextStyle(fontSize: 14),textAlign: TextAlign.center,),
                             )),
