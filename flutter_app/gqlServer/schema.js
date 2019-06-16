@@ -186,14 +186,14 @@ const schema = buildSchema(`
       },
 
       jobs:() => {
-
+        
       },
-
+      
       categories:() =>{
 
       },
 
       transactions:() =>{
-          
+
       }
   }
